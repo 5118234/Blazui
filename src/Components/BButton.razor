@@ -1,0 +1,20 @@
+﻿@inherits BButtonBase
+@{
+    var icon = Icon;
+    if (IsLoading)
+    {
+        icon = "el-icon-loading";
+    }
+
+}
+    <button type="button" @onclick="OnButtonClickedAsync" style="@Style" class="@cssClassBuilder">
+        @if (string.IsNullOrWhiteSpace(icon))
+        {
+            <span>@ChildContent</span>
+        }
+        else
+        {
+            <span>@ChildContent</span>
+            <i class="@icon"></i>
+        }
+    </button>

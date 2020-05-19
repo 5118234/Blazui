@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -63,6 +63,10 @@ spec:
   ports:
     - name: http
       port: 9000
+      protocol: TCP
+      targetPort: 80
+    - name: http1
+      port: 80
       protocol: TCP
       targetPort: 80
   selector:
